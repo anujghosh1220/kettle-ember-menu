@@ -123,6 +123,11 @@ export default function MenuSections({
           </div>
         )}
 
+        {brand.sampleMenu.enabled && (
+          <p className="mt-12 border-t border-border-soft pt-6 text-center text-[11px] font-medium tracking-wide text-mocha-500/80">
+            {brand.sampleMenu.text}
+          </p>
+        )}
         <p className="mt-12 text-center text-xs text-mocha-500/70">
           Prices include all taxes. Please inform us of any allergies — we are
           happy to help you choose.

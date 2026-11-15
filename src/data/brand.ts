@@ -61,9 +61,9 @@ export const brand = {
 
   /** "What are you in the mood for?" — options come from data/moods.ts. */
   moods: {
-    eyebrow: "Discover",
-    title: "What are you in the mood for?",
-    subtitle: "Find something that feels just right.",
+    eyebrow: "Made for your moment",
+    title: "Made for your moment.",
+    subtitle: "A little something for every kind of craving.",
   },
 
   sections: {
@@ -85,6 +85,12 @@ export const brand = {
       eyebrow: "The full menu",
       title: "Our Menu",
     },
+  },
+
+  /** Sample/demo disclosure — set enabled:false for a real café deployment. */
+  sampleMenu: {
+    enabled: true,
+    text: "Sample menu concept — dishes and prices shown for demonstration.",
   },
 
   /** "Still exploring?" micro-recommendations — rendered after the named

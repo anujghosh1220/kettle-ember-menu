@@ -22,7 +22,7 @@ export default function MenuSearch({ value, onChange }: Props) {
         aria-label="Search the menu"
         enterKeyHint="search"
         autoComplete="off"
-        className="h-12 w-full rounded-full border border-border-soft bg-card pl-11 pr-11 text-sm font-medium text-mocha-700 shadow-sm placeholder:text-mocha-500/50 transition-colors focus:border-amber-500 focus:outline-none [&::-webkit-search-cancel-button]:hidden"
+        className="h-12 w-full rounded-full border border-border-soft bg-card pl-11 pr-11 text-sm font-medium text-mocha-700 shadow-sm transition-all duration-200 placeholder:text-mocha-500/50 focus:border-amber-500 focus:shadow-[0_0_0_3px_rgba(203,121,44,0.15)] focus:outline-none [&::-webkit-search-cancel-button]:hidden"
       />
       {value ? (
         <button

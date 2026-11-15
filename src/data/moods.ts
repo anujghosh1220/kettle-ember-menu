@@ -11,12 +11,14 @@ export type MoodId = "filling" | "quick-snack" | "refreshing" | "tea-time" | "sw
 export interface Mood {
   id: MoodId;
   label: string;
+  /** Lucide icon name resolved in the UI layer. */
+  icon: "drumstick" | "cookie" | "cup-soda" | "coffee" | "ice-cream";
 }
 
 export const moods: Mood[] = [
-  { id: "filling", label: "Something filling" },
-  { id: "quick-snack", label: "A quick snack" },
-  { id: "refreshing", label: "Something refreshing" },
-  { id: "tea-time", label: "A tea-time bite" },
-  { id: "sweet", label: "Something sweet" },
+  { id: "filling", label: "Something filling", icon: "drumstick" },
+  { id: "quick-snack", label: "A quick snack", icon: "cookie" },
+  { id: "refreshing", label: "Something refreshing", icon: "cup-soda" },
+  { id: "tea-time", label: "A tea-time bite", icon: "coffee" },
+  { id: "sweet", label: "Something sweet", icon: "ice-cream" },
 ];

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { brand } from "@/data/brand";
 import type { Category } from "@/data/categories";
 
@@ -19,7 +20,6 @@ function buildNavPills(categories: Category[]): NavPill[] {
   return [
     { id: "recommends", label: "Recommendations", href: `#${brand.sections.recommends.id}` },
     { id: "combos", label: "Combos", href: `#${brand.sections.combos.id}` },
-    { id: "all", label: "All", href: `#${brand.sections.menu.id}` },
     ...categories.map((cat) => ({
       id: cat.id,
       label: cat.short,
@@ -30,9 +30,16 @@ function buildNavPills(categories: Category[]): NavPill[] {
 
 export default function CategoryNavigation({ categories, activeId, onSelect }: Props) {
   const pills = buildNavPills(categories);
+  const navRef = useRef<HTMLElement>(null);
+
+  // Keep the active pill visible inside the horizontal scroller.
+  useEffect(() => {
+    const active = navRef.current?.querySelector<HTMLElement>('[aria-current="true"]');
+    active?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+  }, [activeId]);
 
   return (
-    <nav aria-label="Menu categories" className="relative">
+    <nav ref={navRef} aria-label="Menu categories" className="relative">
       <ul className="no-scrollbar flex gap-2 overflow-x-auto px-4 py-3 sm:justify-center sm:px-6">
         {pills.map((pill) => (
           <li key={pill.id} className="shrink-0">

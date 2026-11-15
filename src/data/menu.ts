@@ -39,7 +39,7 @@ export interface MenuItem {
   moods?: MoodId[];
 }
 
-type MenuItemDraft = Omit<MenuItem, "categoryId">;
+type MenuItemDraft = Omit<MenuItem, "categoryId"> & { categoryId?: string };
 
 const mainsItems: MenuItemDraft[] = [
   {
@@ -74,6 +74,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "egg-roll",
+    categoryId: "rolls",
     name: "Egg Roll",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -82,6 +83,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "paneer-roll",
+    categoryId: "rolls",
     name: "Paneer Roll",
     serving: "Standard",
     diet: "vegetarian",
@@ -90,6 +92,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "chicken-roll",
+    categoryId: "rolls",
     name: "Chicken Roll",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -98,6 +101,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "chilli-chicken",
+    categoryId: "starters",
     name: "Chilli Chicken (Boneless)",
     serving: "6 PC",
     diet: "non-vegetarian",
@@ -106,6 +110,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "drums-of-heaven",
+    categoryId: "starters",
     name: "Drums of Heaven",
     serving: "6 PC",
     diet: "non-vegetarian",
@@ -114,6 +119,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "chicken-lollipop-dry",
+    categoryId: "starters",
     name: "Chicken Lollipop Dry",
     serving: "6 PC",
     diet: "non-vegetarian",
@@ -122,6 +128,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "dragon-chicken",
+    categoryId: "starters",
     name: "Dragon Chicken",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -138,6 +145,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "chicken-65",
+    categoryId: "starters",
     name: "Chicken 65",
     serving: "8 PC",
     diet: "non-vegetarian",
@@ -146,6 +154,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "paneer-65",
+    categoryId: "starters",
     name: "Paneer 65",
     serving: "8 PC",
     diet: "vegetarian",
@@ -154,6 +163,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "chicken-dry-fry",
+    categoryId: "starters",
     name: "Chicken Dry Fry (Boneless)",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -162,6 +172,7 @@ const mainsItems: MenuItemDraft[] = [
   },
   {
     id: "chicken-chips",
+    categoryId: "starters",
     name: "Chicken Chips",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -182,6 +193,7 @@ const sandwichItems: MenuItemDraft[] = [
   },
   {
     id: "butter-toast-boiled-egg",
+    categoryId: "toast",
     name: "Butter Toast with Boiled Egg",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -190,6 +202,7 @@ const sandwichItems: MenuItemDraft[] = [
   },
   {
     id: "butter-toast-poached-egg",
+    categoryId: "toast",
     name: "Butter Toast with Poached Egg",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -198,6 +211,7 @@ const sandwichItems: MenuItemDraft[] = [
   },
   {
     id: "butter-toast-omelette",
+    categoryId: "toast",
     name: "Butter Toast with Masala Omlet",
     serving: "Standard",
     diet: "non-vegetarian",
@@ -313,16 +327,25 @@ const biteItems: MenuItemDraft[] = [
 ];
 
 const drinkItems: MenuItemDraft[] = [
-  { id: "water", name: "Water", keywords: ["water", "mineral"], variants: [{ label: "500 ML", price: 10, description: "A 500 ml bottle of drinking water." }] },
-  { id: "black-coffee", name: "Black Coffee", keywords: ["coffee", "espresso"], variants: [{ label: "", price: 40, description: "A straightforward black coffee for those who enjoy their coffee without milk." }] },
-  { id: "milk-coffee", name: "Milk Coffee", keywords: ["coffee", "latte"], variants: [{ label: "", price: 50, description: "A familiar cup of coffee prepared with milk." }] },
-  { id: "cold-coffee", name: "Cold Coffee", keywords: ["coffee", "iced"], variants: [{ label: "", price: 90, description: "A chilled coffee drink, perfect for a refreshing café break." }] },
-  { id: "milk-tea", name: "Milk Tea", keywords: ["tea", "chai"], variants: [{ label: "", price: 40, description: "A familiar cup of tea prepared with milk." }] },
-  { id: "lemon-tea", name: "Lemon Tea", keywords: ["tea", "lemon"], variants: [{ label: "", price: 30, description: "A light tea option with a refreshing lemon flavour." }] },
-  { id: "ginger-tea", name: "Ginger Tea", keywords: ["tea", "ginger"], variants: [{ label: "", price: 35, description: "A comforting tea with the distinctive flavour of ginger." }] },
-  { id: "black-tea", name: "Black Tea", keywords: ["tea"], variants: [{ label: "", price: 25, description: "A simple tea preparation without milk." }] },
+  { id: "water",
+    categoryId: "cold-drinks", name: "Water", keywords: ["water", "mineral"], variants: [{ label: "500 ML", price: 10, description: "A 500 ml bottle of drinking water." }] },
+  { id: "black-coffee",
+    categoryId: "hot-drinks", name: "Black Coffee", keywords: ["coffee", "espresso"], variants: [{ label: "", price: 40, description: "A straightforward black coffee for those who enjoy their coffee without milk." }] },
+  { id: "milk-coffee",
+    categoryId: "hot-drinks", name: "Milk Coffee", keywords: ["coffee", "latte"], variants: [{ label: "", price: 50, description: "A familiar cup of coffee prepared with milk." }] },
+  { id: "cold-coffee",
+    categoryId: "cold-drinks", name: "Cold Coffee", keywords: ["coffee", "iced"], variants: [{ label: "", price: 90, description: "A chilled coffee drink, perfect for a refreshing café break." }] },
+  { id: "milk-tea",
+    categoryId: "hot-drinks", name: "Milk Tea", keywords: ["tea", "chai"], variants: [{ label: "", price: 40, description: "A familiar cup of tea prepared with milk." }] },
+  { id: "lemon-tea",
+    categoryId: "hot-drinks", name: "Lemon Tea", keywords: ["tea", "lemon"], variants: [{ label: "", price: 30, description: "A light tea option with a refreshing lemon flavour." }] },
+  { id: "ginger-tea",
+    categoryId: "hot-drinks", name: "Ginger Tea", keywords: ["tea", "ginger"], variants: [{ label: "", price: 35, description: "A comforting tea with the distinctive flavour of ginger." }] },
+  { id: "black-tea",
+    categoryId: "hot-drinks", name: "Black Tea", keywords: ["tea"], variants: [{ label: "", price: 25, description: "A simple tea preparation without milk." }] },
   {
     id: "coke",
+    categoryId: "cold-drinks",
     name: "Coke",
     keywords: ["cola", "coca"],
     variants: [
@@ -330,16 +353,53 @@ const drinkItems: MenuItemDraft[] = [
       { label: "Masala Coke", price: 80, description: "A cola-based drink with a masala-inspired twist." },
     ],
   },
-  { id: "oreo-shake", name: "Oreo Shake", keywords: ["shake", "dessert", "oreo"], variants: [{ label: "", price: 120, description: "A creamy-style shake featuring the familiar Oreo flavour." }] },
-  { id: "fresh-lime-soda", name: "Fresh Lime Soda", keywords: ["lime", "soda", "fresh"], variants: [{ label: "", price: 40, description: "A refreshing lime-based soda, ideal when you want something light and fizzy." }] },
-  { id: "virgin-mojito", name: "Virgin Mojito", keywords: ["mocktail", "mint", "fresh"], variants: [{ label: "", price: 90, description: "A refreshing non-alcoholic mojito-style drink with a citrus-inspired character." }] },
-  { id: "blue-lagoon", name: "Blue Lagoon", keywords: ["mocktail", "blue", "fresh"], variants: [{ label: "", price: 90, description: "A vibrant blue refreshment that adds a colourful touch to your café experience." }] },
-  { id: "chocolate-shake", name: "Chocolate Shake", keywords: ["shake", "dessert", "chocolate"], variants: [{ label: "", price: 120, description: "A chocolate-flavoured shake for anyone craving a sweet and refreshing drink." }] },
+  { id: "oreo-shake",
+    categoryId: "cold-drinks", name: "Oreo Shake", keywords: ["shake", "dessert", "oreo"], variants: [{ label: "", price: 120, description: "A creamy-style shake featuring the familiar Oreo flavour." }] },
+  { id: "fresh-lime-soda",
+    categoryId: "cold-drinks", name: "Fresh Lime Soda", keywords: ["lime", "soda", "fresh"], variants: [{ label: "", price: 40, description: "A refreshing lime-based soda, ideal when you want something light and fizzy." }] },
+  { id: "virgin-mojito",
+    categoryId: "cold-drinks", name: "Virgin Mojito", keywords: ["mocktail", "mint", "fresh"], variants: [{ label: "", price: 90, description: "A refreshing non-alcoholic mojito-style drink with a citrus-inspired character." }] },
+  { id: "blue-lagoon",
+    categoryId: "cold-drinks", name: "Blue Lagoon", keywords: ["mocktail", "blue", "fresh"], variants: [{ label: "", price: 90, description: "A vibrant blue refreshment that adds a colourful touch to your café experience." }] },
+  { id: "chocolate-shake",
+    categoryId: "cold-drinks", name: "Chocolate Shake", keywords: ["shake", "dessert", "chocolate"], variants: [{ label: "", price: 120, description: "A chocolate-flavoured shake for anyone craving a sweet and refreshing drink." }] },
 ];
 
 // ─────────────────────── MOOD DISCOVERY TAGS ───────────────────────
 // Central classification for "What are you in the mood for?" — browsing
 // aids only, assigned conservatively from what each dish actually is.
+
+
+// ── NEW SAMPLE ITEMS (illustrative — see brand.sampleMenu notice) ──
+
+const riceNewItems: MenuItemDraft[] = [
+  { id: "egg-fried-rice", name: "Egg Fried Rice", diet: "non-vegetarian", keywords: ["rice","egg","fried rice"], variants: [{ label: "", price: 110, description: "Fried rice tossed with egg for a richer, more satisfying bowl." }] },
+  { id: "schezwan-veg-fried-rice", name: "Schezwan Veg Fried Rice", diet: "vegetarian", keywords: ["rice","veg","schezwan","spicy"], variants: [{ label: "", price: 130, description: "Vegetable fried rice finished with a Schezwan-style kick." }] },
+  { id: "schezwan-chicken-fried-rice", name: "Schezwan Chicken Fried Rice", diet: "non-vegetarian", keywords: ["rice","chicken","schezwan","spicy"], variants: [{ label: "", price: 170, description: "Chicken fried rice paired with Schezwan-style flavour." }] },
+  { id: "veg-hakka-noodles", name: "Veg Hakka Noodles", diet: "vegetarian", keywords: ["noodles","hakka","veg"], variants: [{ label: "", price: 120, description: "Hakka-style noodles tossed with vegetables." }] },
+  { id: "chicken-hakka-noodles", name: "Chicken Hakka Noodles", diet: "non-vegetarian", keywords: ["noodles","hakka","chicken"], variants: [{ label: "", price: 170, description: "Hakka-style noodles tossed with chicken." }] },
+];
+
+const starterNewItems: MenuItemDraft[] = [
+  { id: "chicken-popcorn", name: "Chicken Popcorn", diet: "non-vegetarian", keywords: ["chicken","starter","snack"], variants: [{ label: "", price: 160, description: "Small bite-sized pieces of chicken — a fun starter to share." }] },
+  { id: "crispy-chilli-baby-corn", name: "Crispy Chilli Baby Corn", diet: "vegetarian", keywords: ["corn","starter","chilli","veg"], variants: [{ label: "", price: 150, description: "Baby corn tossed in a chilli-style preparation." }] },
+  { id: "paneer-chilli", name: "Paneer Chilli", diet: "vegetarian", keywords: ["paneer","starter","chilli","veg"], variants: [{ label: "", price: 190, description: "Paneer pieces in a chilli-style preparation." }] },
+  { id: "crispy-chicken", name: "Crispy Chicken", diet: "non-vegetarian", keywords: ["chicken","starter","crispy"], variants: [{ label: "", price: 190, description: "Crispy chicken pieces — a classic starter favourite." }] },
+];
+
+const burgerItems: MenuItemDraft[] = [
+  { id: "veg-burger", name: "Veg Burger", diet: "vegetarian", keywords: ["burger","veg","sandwich"], variants: [{ label: "", price: 100, description: "A vegetarian burger — a filling handheld meal." }] },
+  { id: "chicken-burger", name: "Chicken Burger", diet: "non-vegetarian", keywords: ["burger","chicken","sandwich"], variants: [{ label: "", price: 150, description: "A chicken burger — a filling handheld meal." }] },
+  { id: "cheese-sandwich", name: "Cheese Sandwich", diet: "vegetarian", keywords: ["sandwich","cheese","toast"], variants: [{ label: "", price: 110, description: "A toasted sandwich with cheese." }] },
+  { id: "grilled-chicken-sandwich", name: "Grilled Chicken Sandwich", diet: "non-vegetarian", keywords: ["sandwich","chicken","grilled"], variants: [{ label: "", price: 150, description: "A grilled chicken sandwich — a satisfying café classic." }] },
+];
+
+const dessertItems: MenuItemDraft[] = [
+  { id: "chocolate-brownie", name: "Chocolate Brownie", keywords: ["dessert","chocolate","brownie","sweet"], variants: [{ label: "", price: 100, description: "A rich chocolate brownie — a simple sweet finish." }] },
+  { id: "brownie-with-ice-cream", name: "Brownie with Ice Cream", keywords: ["dessert","chocolate","ice cream","sweet"], variants: [{ label: "", price: 150, description: "A chocolate brownie served with ice cream." }] },
+  { id: "chocolate-pastry", name: "Chocolate Pastry", keywords: ["dessert","chocolate","pastry","sweet"], variants: [{ label: "", price: 80, description: "A chocolate pastry — a small sweet treat." }] },
+  { id: "ice-cream", name: "Ice Cream", keywords: ["dessert","ice cream","sweet"], variants: [{ label: "", price: 70, description: "A scoop of ice cream — a cool, simple dessert." }] },
+];
 
 const itemMoods: Record<string, MoodId[]> = {
   // Main Dishes — substantial meals
@@ -391,14 +451,38 @@ const itemMoods: Record<string, MoodId[]> = {
   "blue-lagoon": ["refreshing"],
   "oreo-shake": ["sweet"],
   "chocolate-shake": ["sweet"],
+  "egg-fried-rice": ["filling"],
+  "schezwan-veg-fried-rice": ["filling"],
+  "schezwan-chicken-fried-rice": ["filling"],
+  "veg-hakka-noodles": ["filling"],
+  "chicken-hakka-noodles": ["filling"],
+  "chicken-popcorn": ["quick-snack"],
+  "crispy-chilli-baby-corn": ["quick-snack", "tea-time"],
+  "paneer-chilli": ["quick-snack", "tea-time"],
+  "crispy-chicken": ["quick-snack"],
+  "veg-burger": ["filling", "quick-snack"],
+  "chicken-burger": ["filling", "quick-snack"],
+  "cheese-sandwich": ["filling", "quick-snack"],
+  "grilled-chicken-sandwich": ["filling", "quick-snack"],
+  "chocolate-brownie": ["sweet"],
+  "brownie-with-ice-cream": ["sweet"],
+  "chocolate-pastry": ["sweet"],
+  "ice-cream": ["sweet"],
 };
 
+const assign = (items: MenuItemDraft[], fallback: string): MenuItem[] =>
+  items.map((item) => ({ ...item, categoryId: item.categoryId ?? fallback }));
+
 export const menuItems: MenuItem[] = [
-  ...mainsItems.map((item) => ({ ...item, categoryId: "mains" })),
-  ...sandwichItems.map((item) => ({ ...item, categoryId: "sandwiches" })),
-  ...momoItems.map((item) => ({ ...item, categoryId: "momos" })),
-  ...biteItems.map((item) => ({ ...item, categoryId: "bites" })),
-  ...drinkItems.map((item) => ({ ...item, categoryId: "drinks" })),
+  ...assign(mainsItems, "rice-noodles"),
+  ...assign(sandwichItems, "rolls"),
+  ...assign(momoItems, "momos"),
+  ...assign(biteItems, "bites"),
+  ...assign(drinkItems, "cold-drinks"),
+  ...assign(riceNewItems, "rice-noodles"),
+  ...assign(starterNewItems, "starters"),
+  ...assign(burgerItems, "burgers"),
+  ...assign(dessertItems, "desserts"),
 ].map((item) => ({ ...item, moods: itemMoods[item.id] ?? [] }));
 
 export const visibleItems = menuItems;
@@ -435,3 +519,5 @@ export function itemHasVegetarianOption(item: MenuItem): boolean {
 export function formatPrice(price: number): string {
   return `₹${price}`;
 }
+
+

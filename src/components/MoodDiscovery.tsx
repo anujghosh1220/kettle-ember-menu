@@ -1,7 +1,16 @@
 "use client";
 
+import { Coffee, Cookie, CupSoda, Drumstick, IceCreamCone, type LucideIcon } from "lucide-react";
 import { brand } from "@/data/brand";
 import { moods, type MoodId } from "@/data/moods";
+
+const ICONS: Record<string, LucideIcon> = {
+  drumstick: Drumstick,
+  cookie: Cookie,
+  "cup-soda": CupSoda,
+  coffee: Coffee,
+  "ice-cream": IceCreamCone,
+};
 
 interface Props {
   activeMood: MoodId | null;
@@ -9,7 +18,7 @@ interface Props {
 }
 
 /**
- * "What are you in the mood for?" — horizontal discovery strip.
+ * "Made for your moment." — horizontal discovery strip.
  * Options come from data/moods.ts; tapping the active option clears it.
  */
 export default function MoodDiscovery({ activeMood, onSelect }: Props) {
@@ -35,18 +44,20 @@ export default function MoodDiscovery({ activeMood, onSelect }: Props) {
       <ul className="no-scrollbar flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:justify-center sm:overflow-visible">
         {moods.map((mood) => {
           const active = activeMood === mood.id;
+          const Icon = ICONS[mood.icon] ?? Coffee;
           return (
             <li key={mood.id} className="shrink-0">
               <button
                 type="button"
                 onClick={() => onSelect(active ? null : mood.id)}
                 aria-pressed={active}
-                className={`pressable h-11 whitespace-nowrap rounded-full px-5 text-sm font-bold transition-all duration-200 ${
+                className={`pressable inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-full px-5 text-sm font-bold transition-all duration-200 ${
                   active
                     ? "bg-espresso-950 text-ivory-50 shadow-[0_8px_20px_-8px_rgba(43,29,22,0.6)]"
                     : "border border-border-soft bg-card text-mocha-600 hover:border-espresso-700/40 hover:text-espresso-950"
                 }`}
               >
+                <Icon className="size-4" aria-hidden="true" />
                 {mood.label}
               </button>
             </li>

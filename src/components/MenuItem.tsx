@@ -39,7 +39,7 @@ export default function MenuItemCard({ item, index = 0, animated = false }: Prop
   return (
     <article
       id={`item-${item.id}`}
-      className={`scroll-mt-52 rounded-2xl border border-border-soft bg-card px-5 py-4 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover ${animated ? "card-enter" : ""}`}
+      className={`scroll-mt-52 rounded-2xl border border-border-soft bg-card px-5 py-4 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-mocha-500/40 hover:shadow-card-hover ${animated ? "card-enter" : ""}`}
       style={{ animationDelay: `${Math.min(index * 35, 350)}ms` }}
     >
       <div className="flex items-start justify-between gap-4">

@@ -10,9 +10,14 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  { id: "mains", name: "Main Dishes", short: "Mains" },
-  { id: "sandwiches", name: "Sandwiches & Toast", short: "Sandwiches" },
+  { id: "rice-noodles", name: "Rice & Noodles", short: "Rice & Noodles" },
+  { id: "starters", name: "Indo-Chinese Starters", short: "Starters" },
+  { id: "rolls", name: "Rolls & Sandwiches", short: "Rolls" },
+  { id: "burgers", name: "Burgers & Sandwiches", short: "Burgers" },
   { id: "momos", name: "Momos & Soup", short: "Momos" },
   { id: "bites", name: "Quick Bites", short: "Quick Bites" },
-  { id: "drinks", name: "Drinks & Refreshments", short: "Drinks" },
+  { id: "toast", name: "Toast & Breakfast", short: "Toast" },
+  { id: "hot-drinks", name: "Hot Beverages", short: "Hot Drinks" },
+  { id: "cold-drinks", name: "Cold Beverages", short: "Cold Drinks" },
+  { id: "desserts", name: "Desserts", short: "Desserts" },
 ];
