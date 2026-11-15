@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { brand } from "@/data/brand";
 import Emblem from "./Emblem";
 
@@ -13,6 +12,16 @@ const NAV = [
 
 export default function BrandHeader() {
   const [open, setOpen] = useState(false);
+
+  // Escape closes the mobile menu.
+  useEffect(() => {
+    if (!open) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-ivory-50/10 bg-espresso-950/95 backdrop-blur-md">
@@ -41,34 +50,77 @@ export default function BrandHeader() {
           ))}
         </nav>
 
+        {/* Animated hamburger — three lines morph into an X */}
         <button
           type="button"
-          className="grid size-11 place-items-center rounded-full text-ivory-50 sm:hidden"
+          className="pressable relative grid size-11 place-items-center rounded-full text-ivory-50 transition-colors duration-200 hover:bg-ivory-50/10 focus-visible:bg-ivory-50/10 sm:hidden"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          <span className="relative block h-5 w-6" aria-hidden="true">
+            <span
+              className={`absolute left-0 top-0 h-[2px] w-full rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+                open ? "top-1/2 -translate-y-1/2 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 rounded-full bg-current transition-all duration-200 ${
+                open ? "scale-x-0 opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute bottom-0 left-0 h-[2px] w-full rounded-full bg-current transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+                open ? "bottom-1/2 translate-y-1/2 -rotate-45" : ""
+              }`}
+            />
+          </span>
         </button>
       </div>
 
-      {open ? (
-        <nav aria-label="Mobile" className="border-t border-ivory-50/10 bg-espresso-950 px-4 pb-4 sm:hidden">
-          <ul className="flex flex-col">
-            {NAV.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-3.5 text-base font-semibold text-ivory-50/85 transition-colors hover:text-amber-300"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      ) : null}
+      {/* Cinematic reveal — grid-rows animates height, links stagger in.
+          Always mounted so the close transition can complete. */}
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)] sm:hidden ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <nav
+            aria-label="Mobile"
+            inert={!open}
+            className="border-t border-ivory-50/10 bg-espresso-950 px-4 pb-5 pt-2"
+          >
+            <ul className="flex flex-col">
+              {NAV.map((link, i) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    tabIndex={open ? 0 : -1}
+                    style={{ transitionDelay: open ? `${80 + i * 80}ms` : "0ms" }}
+                    className={`group relative flex items-center py-3.5 text-base font-semibold text-ivory-50/85 transition-all duration-300 ${
+                      open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+                    }`}
+                  >
+                    <span className="mr-3 inline-block size-1 rotate-45 bg-amber-500/70 transition-all duration-300 group-hover:bg-amber-400" aria-hidden="true" />
+                    {link.label}
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-1.5 left-4 h-px w-0 bg-amber-500 transition-all duration-300 group-hover:w-16"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div aria-hidden="true" className="mx-auto mt-4 flex items-center justify-center gap-2">
+              <span className="h-px w-8 bg-champagne-300/25" />
+              <span className="size-1 rotate-45 bg-amber-500/60" />
+              <span className="h-px w-8 bg-champagne-300/25" />
+            </div>
+          </nav>
+        </div>
+      </div>
     </header>
   );
 }
