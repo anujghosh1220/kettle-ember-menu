@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  /* KETTLE & EMBER CAFÉ palette — warm ivory base, midnight espresso,
+     rich mocha text, burnt amber accents, champagne gold details, sage */
+  --color-espresso-950: #2b1d16;
+  --color-espresso-900: #362a20;
+  --color-espresso-800: #463325;
+  --color-espresso-700: #5c4634;
+  --color-ivory-50: #f5eee3;
+  --color-ivory-100: #efe5d3;
+  --color-ivory-200: #e4d7bf;
+  --color-card: #fbf6ec;
+  --color-mocha-300: #c9b69c;
+  --color-mocha-500: #5b4632;
+  --color-mocha-600: #6e563f;
+  --color-mocha-700: #463325;
+  --color-amber-300: #e5a95b;
+  --color-amber-400: #d68f3c;
+  --color-amber-500: #cb792c;
+  --color-amber-600: #b56a24;
+  --color-amber-700: #9a5a1e;
+  --color-champagne-200: #f8e7c2;
+  --color-champagne-300: #f4d9a0;
+  --color-champagne-400: #eacb8e;
+  --color-sage-300: #a6b09b;
+  --color-sage-400: #8b9578;
+  --color-sage-500: #78836b;
+  --color-border-soft: #e2d5bc;
+
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(43, 29, 22, 0.05), 0 10px 30px -14px rgba(43, 29, 22, 0.16);
+  --shadow-card-hover: 0 2px 4px rgba(43, 29, 22, 0.07), 0 18px 40px -16px rgba(43, 29, 22, 0.24);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ivory-50);
+  color: var(--color-mocha-700);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-amber-500);
+  color: var(--color-ivory-50);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-amber-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-enter {
+  animation: card-in 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes ember-float {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+.ember-float {
+  animation: ember-float 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .card-enter,
+  .ember-float {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
