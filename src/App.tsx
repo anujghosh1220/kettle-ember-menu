@@ -34,7 +34,7 @@ export default function App() {
         query={query}
         onQueryChange={setQuery}
       />
-      <div className="flex flex-col gap-12 py-8 sm:gap-16 sm:py-12">
+      <div className="flex flex-col gap-12 py-8 sm:gap-16 sm:py-12 [&>*]:min-w-0">
         <RecommendationSection />
         <ComboSection />
         <MoodDiscovery activeMood={mood} onSelect={setMood} />

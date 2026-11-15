@@ -25,7 +25,7 @@ export default function MoodDiscovery({ activeMood, onSelect }: Props) {
   const { eyebrow, title, subtitle } = brand.moods;
 
   return (
-    <section aria-labelledby="moods-title" className="mx-auto max-w-5xl px-4 sm:px-6">
+    <section aria-labelledby="moods-title" className="mx-auto w-full min-w-0 max-w-5xl px-4 sm:px-6">
       <div className="mb-6 text-center">
         <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600">
           {eyebrow}
