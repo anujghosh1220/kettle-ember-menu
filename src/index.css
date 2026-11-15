@@ -103,6 +103,242 @@ body {
   animation: ember-float 3.2s ease-in-out infinite;
 }
 
+/* ─────────────────── QR DISPLAY PAGE ─────────────────── */
+
+/* Sheet base — container-query units scale the design to any size */
+.qr-sheet {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  border-radius: 2.5cqw;
+  overflow: hidden;
+}
+.qr-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 7cqw 6cqw;
+  text-align: center;
+}
+.qr-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 4.6cqw;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #f4d9a0;
+}
+.qr-eyebrow-dark {
+  font-family: var(--font-serif);
+  font-size: 4.6cqw;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #2b1d16;
+}
+.qr-sub {
+  margin-top: 0.8cqw;
+  font-size: 2cqw;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(245, 238, 227, 0.55);
+}
+.qr-sub-dark {
+  margin-top: 0.8cqw;
+  font-size: 2cqw;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #5b4632;
+}
+.qr-brand-big {
+  font-family: var(--font-serif);
+  font-size: 7.5cqw;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: #f5eee3;
+}
+.qr-welcome {
+  font-size: 2.2cqw;
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #f4d9a0;
+}
+.qr-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 3cqw;
+  color: #5b4632;
+}
+.qr-brand-back {
+  font-family: var(--font-serif);
+  font-size: 5.4cqw;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #2b1d16;
+}
+.qr-closing {
+  font-family: var(--font-serif);
+  font-size: 5cqw;
+  font-weight: 600;
+  color: #2b1d16;
+}
+.qr-rule,
+.qr-rule-dark {
+  width: 18cqw;
+  height: 1px;
+  margin: 2.2cqw 0;
+}
+.qr-rule {
+  background: rgba(244, 217, 160, 0.5);
+}
+.qr-rule-dark {
+  background: rgba(91, 70, 50, 0.4);
+}
+.qr-panel {
+  width: 58cqw;
+  padding: 3cqw;
+  border-radius: 2cqw;
+  background: #f5eee3;
+  box-shadow: 0 1cqw 3cqw rgba(43, 29, 22, 0.18);
+}
+.qr-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.qr-cta {
+  font-size: 2.4cqw;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #cb792c;
+}
+.qr-cta-dark {
+  font-size: 2.4cqw;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #cb792c;
+}
+.qr-scan {
+  font-size: 2.6cqw;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #f4d9a0;
+}
+.qr-hint {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.4cqw;
+  color: rgba(245, 238, 227, 0.65);
+}
+.qr-hint-dark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.4cqw;
+  color: #5b4632;
+}
+.qr-tagline,
+.qr-tagline-dark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.2cqw;
+}
+.qr-tagline {
+  color: rgba(244, 217, 160, 0.75);
+}
+.qr-tagline-dark {
+  color: #5b4632;
+}
+.qr-credit {
+  font-size: 1.6cqw;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 238, 227, 0.4);
+}
+.qr-ivory .qr-credit {
+  color: rgba(91, 70, 50, 0.55);
+}
+.qr-ember {
+  background: #2b1d16;
+}
+.qr-ivory {
+  background: #f5eee3;
+  border: 1px solid #e2d5bc;
+}
+.qr-counter {
+  background: #463325;
+}
+.qr-tent-panel {
+  border-radius: 4px;
+}
+.qr-fold-tag {
+  position: absolute;
+  bottom: 1.5cqw;
+  right: 2cqw;
+  font-size: 1.4cqw;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: rgba(245, 238, 227, 0.45);
+  text-transform: uppercase;
+}
+.qr-ivory .qr-fold-tag {
+  color: rgba(91, 70, 50, 0.5);
+}
+
+/* ── PRINT ── */
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .qr-print-root,
+  .qr-print-root * {
+    visibility: visible !important;
+  }
+  .qr-print-root {
+    position: fixed !important;
+    inset: 0;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5mm;
+    background: #fff;
+  }
+  .qr-print-root > div {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 5mm;
+  }
+  .qr-sheet {
+    width: var(--pw) !important;
+    height: var(--ph) !important;
+    max-width: none;
+    border-radius: 2mm;
+    box-shadow: none !important;
+  }
+  .qr-panel {
+    box-shadow: none;
+  }
+  .qr-screen-only {
+    display: none !important;
+  }
+  .qr-tent-panel {
+    page-break-after: always;
+  }
+  .qr-tent-panel:last-child {
+    page-break-after: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -116,6 +116,9 @@ export const brand = {
     credit: "Designed & Developed by",
   },
 
+  /** Public production URL — destination for the table QR codes. */
+  menuUrl: "https://kettle-ember-menu.vercel.app/",
+
   contact: {
     address: null,
     phone: null,
