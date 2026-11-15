@@ -58,7 +58,7 @@ function ComboCard({ combo }: { combo: ResolvedCombo }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-amber-500 text-sm font-bold text-espresso-950 transition-colors hover:bg-amber-400"
+        className="pressable mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-amber-500 text-sm font-bold text-espresso-950 transition-colors hover:bg-amber-400"
       >
         {open ? "Hide items" : "View items"}
         <ChevronDown

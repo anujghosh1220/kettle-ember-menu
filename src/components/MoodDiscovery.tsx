@@ -41,7 +41,7 @@ export default function MoodDiscovery({ activeMood, onSelect }: Props) {
                 type="button"
                 onClick={() => onSelect(active ? null : mood.id)}
                 aria-pressed={active}
-                className={`h-11 whitespace-nowrap rounded-full px-5 text-sm font-bold transition-all duration-200 ${
+                className={`pressable h-11 whitespace-nowrap rounded-full px-5 text-sm font-bold transition-all duration-200 ${
                   active
                     ? "bg-espresso-950 text-ivory-50 shadow-[0_8px_20px_-8px_rgba(43,29,22,0.6)]"
                     : "border border-border-soft bg-card text-mocha-600 hover:border-espresso-700/40 hover:text-espresso-950"

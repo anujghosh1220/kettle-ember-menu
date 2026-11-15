@@ -39,7 +39,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-champagne-300/50 to-transparent"
       />
 
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-4 pb-14 pt-12 text-center sm:px-6 sm:pb-16 sm:pt-16">
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center px-4 pb-10 pt-12 text-center sm:px-6 sm:pb-12 sm:pt-16">
         <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show">
           <Emblem className="size-14 text-champagne-300 sm:size-16" />
         </motion.div>
@@ -96,7 +96,7 @@ export default function Hero() {
         >
           <a
             href="#menu"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-amber-500 px-8 text-sm font-bold text-espresso-950 transition-colors duration-200 hover:bg-amber-400"
+            className="pressable inline-flex h-12 items-center justify-center gap-2 rounded-full bg-amber-500 px-8 text-sm font-bold text-espresso-950 transition-colors duration-200 hover:bg-amber-400"
           >
             {cta}
             <ArrowDown className="size-4" aria-hidden="true" />

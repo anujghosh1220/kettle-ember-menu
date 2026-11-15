@@ -60,7 +60,7 @@ export default function FeaturedDiscovery({ onBeforeNavigate }: Props) {
         <button
           type="button"
           onClick={handleNavigate}
-          className="group mt-5 block w-full rounded-xl text-left transition-colors"
+          className="pressable group mt-5 block w-full rounded-xl text-left"
         >
           <span className="flex items-start justify-between gap-4 border-t border-border-soft pt-5">
             <span className="min-w-0">

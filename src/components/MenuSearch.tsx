@@ -29,7 +29,7 @@ export default function MenuSearch({ value, onChange }: Props) {
           type="button"
           onClick={() => onChange("")}
           aria-label="Clear search"
-          className="absolute right-2 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full text-mocha-500 transition-colors hover:bg-ivory-200 hover:text-mocha-700"
+          className="pressable absolute right-2 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-full text-mocha-500 transition-colors hover:bg-ivory-200 hover:text-mocha-700"
         >
           <X className="size-4" aria-hidden="true" />
         </button>

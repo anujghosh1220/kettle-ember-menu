@@ -87,6 +87,18 @@ export const brand = {
     },
   },
 
+  /** "Still exploring?" micro-recommendations — rendered after the named
+      menu category. Set to [] to disable. Items resolve from menu data. */
+  nudges: [
+    {
+      id: "after-bites",
+      afterCategoryId: "bites",
+      eyebrow: "Still exploring?",
+      text: "Something refreshing might be just what you need.",
+      itemId: "virgin-mojito",
+    },
+  ],
+
   /** Premium closing block at the top of the footer. */
   closing: {
     title: "Stay a little longer.",

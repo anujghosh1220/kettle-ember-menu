@@ -3,6 +3,9 @@ import { formatPrice, variantDiet, type Diet, type MenuItem, type MenuVariant } 
 interface Props {
   item: MenuItem;
   index?: number;
+  /** When true, plays the entrance animation (set by the parent once the
+      section scrolls into view). */
+  animated?: boolean;
 }
 
 /** Small accessible veg / non-veg marker — not reliant on colour alone. */
@@ -14,19 +17,19 @@ function DietMark({ diet }: { diet: Diet }) {
       role="img"
       aria-label={veg ? "Vegetarian" : "Non-vegetarian"}
       title={veg ? "Vegetarian" : "Non-vegetarian"}
-      className={`inline-block size-3.5 shrink-0 rounded-full border-[1.5px] align-middle ${
+      className={`inline-flex size-3.5 shrink-0 items-center justify-center rounded-full border-[1.5px] align-middle ${
         veg ? "border-sage-500" : "border-amber-600"
       }`}
     >
       <span
         aria-hidden="true"
-        className={`mx-auto mt-[3px] block size-1.5 rounded-full ${veg ? "bg-sage-500" : "bg-amber-600"}`}
+        className={`size-1.5 shrink-0 rounded-full ${veg ? "bg-sage-500" : "bg-amber-600"}`}
       />
     </span>
   );
 }
 
-export default function MenuItemCard({ item, index = 0 }: Props) {
+export default function MenuItemCard({ item, index = 0, animated = false }: Props) {
   const variants = item.variants;
   const single = variants.length === 1;
   const singleVariant = single ? variants[0] : null;
@@ -36,7 +39,7 @@ export default function MenuItemCard({ item, index = 0 }: Props) {
   return (
     <article
       id={`item-${item.id}`}
-      className="card-enter scroll-mt-52 rounded-2xl border border-border-soft bg-card px-5 py-4 shadow-card"
+      className={`scroll-mt-52 rounded-2xl border border-border-soft bg-card px-5 py-4 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover ${animated ? "card-enter" : ""}`}
       style={{ animationDelay: `${Math.min(index * 35, 350)}ms` }}
     >
       <div className="flex items-start justify-between gap-4">

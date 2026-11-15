@@ -80,6 +80,14 @@ body {
   animation: card-in 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
+/* Subtle pressed state for interactive controls */
+.pressable {
+  transition: transform 0.15s ease;
+}
+.pressable:active {
+  transform: scale(0.97);
+}
+
 @keyframes ember-float {
   0%,
   100% {

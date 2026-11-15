@@ -40,7 +40,7 @@ export default function CategoryNavigation({ categories, activeId, onSelect }: P
               type="button"
               onClick={() => onSelect(pill)}
               aria-current={activeId === pill.id ? "true" : undefined}
-              className={`h-10 whitespace-nowrap rounded-full px-4 text-[13px] font-bold transition-all duration-200 sm:px-5 ${
+              className={`pressable h-10 whitespace-nowrap rounded-full px-4 text-[13px] font-bold transition-all duration-200 sm:px-5 ${
                 activeId === pill.id
                   ? "bg-amber-500 text-espresso-950 shadow-[0_6px_18px_-6px_rgba(203,121,44,0.9)]"
                   : "border border-ivory-50/20 bg-espresso-900/70 text-ivory-50/70 hover:border-ivory-50/40 hover:text-ivory-50"

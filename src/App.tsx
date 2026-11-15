@@ -26,7 +26,7 @@ export default function App() {
     <>
       <BrandHeader />
       <Hero />
-      <div className="pt-8 sm:pt-10">
+      <div className="pb-4 pt-6 sm:pb-6 sm:pt-8">
         <FeaturedDiscovery onBeforeNavigate={resetFilters} />
       </div>
       <StickyMenuBar

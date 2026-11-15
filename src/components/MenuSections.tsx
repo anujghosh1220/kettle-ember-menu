@@ -9,6 +9,7 @@ import type { MoodId } from "@/data/moods";
 import { moods } from "@/data/moods";
 import { useMenuSearch } from "@/hooks/useMenuSearch";
 import MenuCategory from "./MenuCategory";
+import MenuNudge from "./MenuNudge";
 
 interface Props {
   categories: Category[];
@@ -89,16 +90,16 @@ export default function MenuSections({
             </span>
             <div>
               <h3 className="font-serif text-xl font-semibold text-espresso-950">
-                Nothing matches those filters
+                Nothing on the menu matches that search.
               </h3>
               <p className="mt-1 text-sm text-mocha-600">
-                Try removing a filter or two — the full menu is always a tap away.
+                Try another dish or explore a different category.
               </p>
             </div>
             <button
               type="button"
               onClick={onResetFilters}
-              className="h-11 rounded-full bg-amber-500 px-6 text-sm font-bold text-espresso-950 transition-colors hover:bg-amber-400"
+              className="pressable h-11 rounded-full bg-amber-500 px-6 text-sm font-bold text-espresso-950 transition-colors hover:bg-amber-400"
             >
               Show the full menu
             </button>
@@ -106,7 +107,18 @@ export default function MenuSections({
         ) : (
           <div className="flex flex-col gap-12 sm:gap-16">
             {sections.map(({ category, items: sectionItems }) => (
-              <MenuCategory key={category.id} category={category} items={sectionItems} />
+              <div key={category.id} className="flex flex-col gap-8">
+                <MenuCategory category={category} items={sectionItems} />
+                {brand.nudges
+                  .filter((n) => n.afterCategoryId === category.id)
+                  .map((nudge) => (
+                    <MenuNudge
+                      key={nudge.id}
+                      nudge={nudge}
+                      onBeforeNavigate={onResetFilters}
+                    />
+                  ))}
+              </div>
             ))}
           </div>
         )}
