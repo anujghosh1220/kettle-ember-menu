@@ -41,7 +41,7 @@ export default function MenuCategory({ category, items }: Props) {
       aria-labelledby={`cat-${category.id}-title`}
       className="scroll-mt-52"
     >
-      <div className="mb-5 flex items-center gap-4">
+      <div className={`mb-5 flex items-center gap-4 ${inView ? "card-enter" : ""}`}>
         <div aria-hidden="true" className="h-px flex-1 bg-border-soft" />
         <div className="text-center">
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-600">

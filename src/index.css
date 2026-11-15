@@ -275,8 +275,91 @@ body {
 .qr-counter {
   background: #463325;
 }
-.qr-tent-panel {
+.qr-back-dark {
+  background: #2b1d16;
+}
+.qr-back-mocha {
+  background: #463325;
+}
+/* Light-text overrides for dark tent backs */
+.qr-back-dark .qr-brand-back,
+.qr-back-mocha .qr-brand-back {
+  color: #f4d9a0;
+}
+.qr-back-dark .qr-closing,
+.qr-back-mocha .qr-closing {
+  color: #f5eee3;
+}
+.qr-back-dark .qr-hint-dark,
+.qr-back-mocha .qr-hint-dark {
+  color: rgba(245, 238, 227, 0.65);
+}
+.qr-back-dark .qr-tagline-dark,
+.qr-back-mocha .qr-tagline-dark {
+  color: rgba(244, 217, 160, 0.75);
+}
+.qr-back-dark .qr-credit,
+.qr-back-mocha .qr-credit {
+  color: rgba(245, 238, 227, 0.4);
+}
+.qr-back-dark .qr-rule-dark,
+.qr-back-mocha .qr-rule-dark {
+  background: rgba(244, 217, 160, 0.4);
+}
+.qr-tent-back {
   border-radius: 4px;
+}
+
+/* Preview stage — subtle presentation surface */
+.qr-stage {
+  background-image: radial-gradient(rgba(91, 70, 50, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* ── PRINT ──
+   The page renders two trees: .qr-screen (all UI + preview) and
+   .qr-print-only (dedicated print markup at exact mm sizes).
+   In print we simply remove the screen tree — no visibility tricks. */
+.qr-print-only {
+  display: none;
+}
+
+@media print {
+  .qr-screen {
+    display: none !important;
+  }
+  .qr-print-only {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+  .qr-print-only > * {
+    page-break-after: always;
+  }
+  .qr-print-only > *:last-child {
+    page-break-after: auto;
+  }
+  .qr-sheet {
+    width: var(--pw) !important;
+    height: var(--ph) !important;
+    max-width: none;
+    border-radius: 2mm;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .qr-sheet * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .qr-panel {
+    box-shadow: none;
+  }
+  .qr-screen-only {
+    display: none !important;
+  }
 }
 .qr-fold-tag {
   position: absolute;
@@ -290,53 +373,6 @@ body {
 }
 .qr-ivory .qr-fold-tag {
   color: rgba(91, 70, 50, 0.5);
-}
-
-/* ── PRINT ── */
-
-@media print {
-  body * {
-    visibility: hidden !important;
-  }
-  .qr-print-root,
-  .qr-print-root * {
-    visibility: visible !important;
-  }
-  .qr-print-root {
-    position: fixed !important;
-    inset: 0;
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5mm;
-    background: #fff;
-  }
-  .qr-print-root > div {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    gap: 5mm;
-  }
-  .qr-sheet {
-    width: var(--pw) !important;
-    height: var(--ph) !important;
-    max-width: none;
-    border-radius: 2mm;
-    box-shadow: none !important;
-  }
-  .qr-panel {
-    box-shadow: none;
-  }
-  .qr-screen-only {
-    display: none !important;
-  }
-  .qr-tent-panel {
-    page-break-after: always;
-  }
-  .qr-tent-panel:last-child {
-    page-break-after: auto;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

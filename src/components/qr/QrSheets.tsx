@@ -5,11 +5,13 @@ import QrImage from "./QrImage";
  * Printable QR sheet designs. All sizing uses container-query units (cqw)
  * so the same markup scales perfectly from screen preview to exact print
  * dimensions. The QR always sits on a Warm Ivory panel for scannability.
+ * `style` must be applied to the outer .qr-sheet — it carries the print
+ * size custom properties (--pw/--ph/--ar).
  */
 
 interface SheetProps {
-  /** CSS custom props for print sizing: --pw/--ph (mm) and --ar (ratio). */
   style?: React.CSSProperties;
+  qrSrc: string | null;
 }
 
 function Credit() {
@@ -21,24 +23,24 @@ function Credit() {
   );
 }
 
-function QrPanel() {
+function QrPanel({ src }: { src: string | null }) {
   return (
     <div className="qr-panel">
-      <QrImage className="qr-img" />
+      <QrImage src={src} className="qr-img" />
     </div>
   );
 }
 
 /* ── DESIGN A · EMBER CLASSIC ─────────────────────────────────── */
 
-export function EmberClassic({ style }: SheetProps) {
+export function EmberClassic({ style, qrSrc }: SheetProps) {
   return (
     <div className="qr-sheet qr-ember" style={style}>
       <div className="qr-inner">
         <p className="qr-eyebrow">{brand.wordmark}</p>
         <p className="qr-sub">{brand.descriptor}</p>
         <div className="qr-rule" aria-hidden="true" />
-        <QrPanel />
+        <QrPanel src={qrSrc} />
         <p className="qr-cta">Scan to explore</p>
         <p className="qr-hint">Discover something delicious.</p>
         <p className="qr-tagline">“{brand.tagline}”</p>
@@ -50,7 +52,7 @@ export function EmberClassic({ style }: SheetProps) {
 
 /* ── DESIGN B · IVORY EDITION ─────────────────────────────────── */
 
-export function IvoryEdition({ style }: SheetProps) {
+export function IvoryEdition({ style, qrSrc }: SheetProps) {
   return (
     <div className="qr-sheet qr-ivory" style={style}>
       <div className="qr-inner">
@@ -58,7 +60,7 @@ export function IvoryEdition({ style }: SheetProps) {
         <p className="qr-sub-dark">{brand.descriptor}</p>
         <div className="qr-rule-dark" aria-hidden="true" />
         <p className="qr-lead">A little something delicious awaits.</p>
-        <QrPanel />
+        <QrPanel src={qrSrc} />
         <p className="qr-cta-dark">Scan to view our menu</p>
         <p className="qr-hint-dark">Your table. Your menu. Your moment.</p>
         <Credit />
@@ -69,15 +71,15 @@ export function IvoryEdition({ style }: SheetProps) {
 
 /* ── DESIGN C · MODERN COUNTER ────────────────────────────────── */
 
-export function ModernCounter({ style }: SheetProps) {
+export function ModernCounter({ style, qrSrc }: SheetProps) {
   return (
-    <div className="qr-sheet qr-counter">
-      <div className="qr-inner" style={style}>
+    <div className="qr-sheet qr-counter" style={style}>
+      <div className="qr-inner">
         <p className="qr-welcome">Welcome to</p>
         <p className="qr-brand-big">{brand.wordmark}</p>
         <p className="qr-sub">{brand.descriptor}</p>
         <div className="qr-rule" aria-hidden="true" />
-        <QrPanel />
+        <QrPanel src={qrSrc} />
         <p className="qr-scan">Scan here</p>
         <p className="qr-tagline">“{brand.tagline}”</p>
         <Credit />
@@ -86,33 +88,25 @@ export function ModernCounter({ style }: SheetProps) {
   );
 }
 
-/* ── TABLE TENT · FRONT / BACK panels ─────────────────────────── */
+/* ── TABLE TENT back panel ────────────────────────────────────── */
 
-export function TentFront({ style }: SheetProps) {
-  return (
-    <div className="qr-sheet qr-ember qr-tent-panel" style={style}>
-      <div className="qr-inner">
-        <p className="qr-eyebrow">{brand.wordmark}</p>
-        <p className="qr-sub">{brand.descriptor}</p>
-        <div className="qr-rule" aria-hidden="true" />
-        <QrPanel />
-        <p className="qr-cta">Scan to explore</p>
-        <p className="qr-hint">Discover something delicious.</p>
-        <Credit />
-      </div>
-      <span className="qr-screen-only qr-fold-tag">FRONT · QR SIDE</span>
-    </div>
-  );
+interface TentBackProps {
+  style?: React.CSSProperties;
+  /** "light" = ivory stationery back; "dark" = espresso/mocha back. */
+  tone: "light" | "dark";
 }
 
-export function TentBack({ style }: SheetProps) {
+/** Back panel — closing message, palette-matched to the selected design. */
+export function TentBack({ style, tone }: TentBackProps) {
   return (
-    <div className="qr-sheet qr-ivory qr-tent-panel" style={style}>
+    <div className={`qr-sheet qr-tent-back ${tone === "dark" ? "qr-back-dark" : "qr-ivory"}`} style={style}>
       <div className="qr-inner">
         <p className="qr-brand-back">{brand.wordmark}</p>
         <div className="qr-rule-dark" aria-hidden="true" />
         <p className="qr-closing">Stay a little longer.</p>
-        <p className="qr-hint-dark">Good food. Warm moments. That&rsquo;s the Kettle &amp; Ember way.</p>
+        <p className="qr-hint-dark">
+          Good food. Warm moments. That&rsquo;s the Kettle &amp; Ember way.
+        </p>
         <p className="qr-tagline-dark">“{brand.tagline}”</p>
         <Credit />
       </div>
