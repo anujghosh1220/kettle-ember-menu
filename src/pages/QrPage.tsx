@@ -58,6 +58,7 @@ export default function QrPage() {
   const [design, setDesign] = useState<DesignId>("ember");
   const [layout, setLayout] = useState<LayoutId>("card");
   const [sizeId, setSizeId] = useState("a6");
+  const [side, setSide] = useState<"front" | "back">("front");
   const qrSrc = useQrDataUrl();
 
   const size = useMemo(
@@ -125,7 +126,7 @@ export default function QrPage() {
           </div>
         </header>
 
-        <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
+        <main className="mx-auto max-w-6xl px-4 pb-28 pt-8 sm:px-6 sm:pb-12 sm:pt-12 lg:pb-12">
           <div className="mb-8 text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600">
               Print-ready QR displays
@@ -230,33 +231,45 @@ export default function QrPage() {
               </button>
 
               <ul className="flex flex-col gap-1.5 text-xs leading-relaxed text-mocha-500">
-                <li>· Enable <strong>background graphics</strong> in the print dialog for best results.</li>
-                <li>· The QR links to {brand.menuUrl}</li>
-                {layout === "tent" && <li>· Front prints first, then flip for the back panel.</li>}
+                <li>· Paper: {layout === "tent" ? "2 × " : ""}{activeSize.w} × {activeSize.h} mm{layout === "card" ? ` (${size.label.split("·")[0].trim()})` : " panels"}</li>
+                <li>· Orientation: portrait · margins: none (fit to page)</li>
+                {layout === "tent" && <li>· Order: front panel first, flip sheet, then back</li>}
+                <li>· Enable <strong>background graphics</strong> for the dark designs.</li>
+                <li>· QR destination: {brand.menuUrl}</li>
               </ul>
             </div>
 
             {/* ── Live preview — proportional to the real print size ── */}
             <div className="flex flex-col items-center gap-3">
+              {layout === "tent" && (
+                <div className="flex rounded-full border border-border-soft bg-card/70 p-1" role="group" aria-label="Preview side">
+                  {(["front", "back"] as const).map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => setSide(s)}
+                      aria-pressed={side === s}
+                      className={`pressable rounded-full px-4 py-1.5 text-xs font-bold capitalize transition-all duration-200 ${
+                        side === s ? "bg-espresso-950 text-ivory-50" : "text-mocha-500 hover:text-espresso-950"
+                      }`}
+                    >
+                      {s === "front" ? "Front · QR" : "Back · Message"}
+                    </button>
+                  ))}
+                </div>
+              )}
               <div className="qr-stage w-full rounded-2xl border border-border-soft bg-ivory-100/70 p-4 sm:p-8">
                 {layout === "card" ? (
                   <div className="mx-auto w-full max-w-[380px]">
                     <Sheet design={design} size={size} qrSrc={qrSrc} />
                   </div>
+                ) : side === "front" ? (
+                  <div className="mx-auto w-full max-w-[380px]">
+                    <Sheet design={design} size={TENT_SIZE} qrSrc={qrSrc} />
+                  </div>
                 ) : (
-                  <div className="mx-auto flex w-full max-w-[380px] flex-col gap-6">
-                    <div>
-                      <p className="qr-screen-only mb-1.5 text-center text-[10px] font-bold uppercase tracking-[0.24em] text-mocha-500">
-                        Front · QR side
-                      </p>
-                      <Sheet design={design} size={TENT_SIZE} qrSrc={qrSrc} />
-                    </div>
-                    <div>
-                      <p className="qr-screen-only mb-1.5 text-center text-[10px] font-bold uppercase tracking-[0.24em] text-mocha-500">
-                        Back · message side
-                      </p>
-                      <TentBack style={sheetStyle(TENT_SIZE)} tone={tentTone(design)} />
-                    </div>
+                  <div className="mx-auto w-full max-w-[380px]">
+                    <TentBack style={sheetStyle(TENT_SIZE)} tone={tentTone(design)} />
                   </div>
                 )}
               </div>
@@ -264,6 +277,19 @@ export default function QrPage() {
             </div>
           </div>
         </main>
+
+        {/* Sticky mobile print action — hidden on desktop & in print */}
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border-soft bg-espresso-950/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md lg:hidden">
+          <button
+            type="button"
+            onClick={handlePrint}
+            disabled={!qrSrc}
+            className="pressable flex h-12 w-full items-center justify-center gap-2 rounded-full bg-amber-500 text-sm font-bold text-espresso-950 transition-colors hover:bg-amber-400 disabled:cursor-wait disabled:opacity-60"
+          >
+            <Printer className="size-4" aria-hidden="true" />
+            {qrSrc ? "Print QR display" : "Preparing QR…"}
+          </button>
+        </div>
       </div>
 
       {/* ── Print-only output — the ONLY thing that reaches the printer ── */}

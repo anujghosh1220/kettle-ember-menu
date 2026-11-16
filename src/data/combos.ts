@@ -28,7 +28,7 @@ export const combos: Combo[] = [
   {
     id: "noodle-break",
     name: "The Noodle Break",
-    description: "A satisfying noodle favourite paired with a refreshing drink.",
+    description: "Chicken chowmin and fresh lime soda — a simple pairing for a little break.",
     icon: "noodles",
     components: [
       { itemId: "chowmin", variantLabel: "Chicken" },
@@ -38,7 +38,7 @@ export const combos: Combo[] = [
   {
     id: "indo-chinese-feast",
     name: "The Indo-Chinese Feast",
-    description: "A hearty rice-and-chicken combination for a more substantial meal.",
+    description: "Schezwan chicken fried rice paired with chilli chicken — an Indo-Chinese combination for a satisfying meal.",
     icon: "flame",
     components: [
       { itemId: "chicken-fried-rice-schezwan" },
@@ -48,7 +48,7 @@ export const combos: Combo[] = [
   {
     id: "cafe-comfort",
     name: "The Café Comfort",
-    description: "A comforting momo favourite alongside a chilled coffee.",
+    description: "Steamed chicken momos and cold coffee — a comforting café pairing.",
     icon: "coffee",
     components: [
       { itemId: "steam-chicken-momo" },
@@ -58,7 +58,7 @@ export const combos: Combo[] = [
   {
     id: "quick-bite",
     name: "The Quick Bite",
-    description: "A convenient snack pairing for a relaxed café break.",
+    description: "Chicken sandwich and salted fries — a familiar combination for a quick café break.",
     icon: "sandwich",
     components: [
       { itemId: "sandwich", variantLabel: "Chicken" },
@@ -68,7 +68,7 @@ export const combos: Combo[] = [
   {
     id: "evening-treat",
     name: "The Evening Treat",
-    description: "A satisfying savoury bite followed by a sweet, chilled treat.",
+    description: "Paneer roll and Oreo shake — a savoury bite followed by something sweet.",
     icon: "shake",
     components: [
       { itemId: "paneer-roll" },

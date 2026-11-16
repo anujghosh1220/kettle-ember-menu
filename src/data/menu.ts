@@ -47,8 +47,8 @@ const mainsItems: MenuItemDraft[] = [
     name: "Fried Rice",
     keywords: ["rice", "veg fried rice"],
     variants: [
-      { label: "Veg", price: 90, description: "A comforting rice preparation with a vegetable-based flavour, perfect for a satisfying meal." },
-      { label: "Chicken", price: 120, description: "A hearty rice dish paired with chicken, bringing together familiar Indo-Chinese flavours." },
+      { label: "Veg", price: 90, description: "A fragrant vegetable fried rice, made for a simple, satisfying plate." },
+      { label: "Chicken", price: 120, description: "Fried rice with chicken — a familiar favourite that comes together beautifully." },
     ],
   },
   {
@@ -56,9 +56,9 @@ const mainsItems: MenuItemDraft[] = [
     name: "Chowmin",
     keywords: ["noodles", "hakka"],
     variants: [
-      { label: "Veg", price: 140, description: "A satisfying noodle dish with a vegetable-based preparation, ideal for a quick and flavourful meal." },
-      { label: "Egg", price: 150, description: "Classic noodles paired with egg for a more filling and satisfying option." },
-      { label: "Chicken", price: 160, description: "A popular noodle favourite prepared with chicken for a hearty meal." },
+      { label: "Veg", price: 140, description: "Vegetable noodles tossed into a satisfying meal, perfect with a hot cup of tea." },
+      { label: "Egg", price: 150, description: "Noodles lifted with egg — a heartier twist on a café classic." },
+      { label: "Chicken", price: 160, description: "Chicken chowmin, a hearty favourite for a proper meal." },
     ],
   },
   {
@@ -66,10 +66,10 @@ const mainsItems: MenuItemDraft[] = [
     name: "Hot Garlic Chowmin",
     keywords: ["noodles", "garlic", "spicy"],
     variants: [
-      { label: "Veg", price: 150, description: "Noodles with a bold garlic-inspired flavour and a vegetable-based preparation." },
-      { label: "Egg", price: 160, description: "A flavourful garlic-style noodle preparation with egg." },
-      { label: "Chicken", price: 170, description: "A hearty noodle dish with chicken and a bold garlic-inspired flavour." },
-      { label: "Mixed", price: 210, description: "A mixed variation of hot garlic noodles for those looking for a more substantial meal." },
+      { label: "Veg", price: 150, description: "Noodles with a bold garlic character and a vegetable base." },
+      { label: "Egg", price: 160, description: "Garlic-forward noodles with egg for extra satisfaction." },
+      { label: "Chicken", price: 170, description: "Chicken noodles with a pronounced garlic kick." },
+      { label: "Mixed", price: 210, description: "A generous mixed portion of hot garlic noodles — substantial and satisfying." },
     ],
   },
   {
@@ -79,7 +79,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["roll", "wrap"],
-    variants: [{ label: "", price: 80, description: "A convenient roll featuring egg, perfect for a quick and satisfying bite." }],
+    variants: [{ label: "", price: 80, description: "A classic egg roll — a convenient, filling bite." }],
   },
   {
     id: "paneer-roll",
@@ -88,7 +88,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "vegetarian",
     keywords: ["roll", "wrap", "paneer"],
-    variants: [{ label: "", price: 160, description: "A flavourful roll featuring paneer, ideal for a filling snack." }],
+    variants: [{ label: "", price: 160, description: "A paneer-filled roll — a satisfying vegetarian option for a quick bite." }],
   },
   {
     id: "chicken-roll",
@@ -97,7 +97,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["roll", "wrap"],
-    variants: [{ label: "", price: 140, description: "A satisfying handheld roll featuring chicken, perfect when you want something quick." }],
+    variants: [{ label: "", price: 140, description: "A handheld roll stuffed with chicken — quick, easy and satisfying." }],
   },
   {
     id: "chilli-chicken",
@@ -106,7 +106,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "6 PC",
     diet: "non-vegetarian",
     keywords: ["chicken", "starter", "spicy"],
-    variants: [{ label: "", price: 210, description: "Boneless chicken pieces prepared in the popular Indo-Chinese chilli chicken style." }],
+    variants: [{ label: "", price: 210, description: "Boneless chicken in the much-loved Indo-Chinese chilli style — bold, flavour-packed and perfect for sharing." }],
   },
   {
     id: "drums-of-heaven",
@@ -115,7 +115,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "6 PC",
     diet: "non-vegetarian",
     keywords: ["chicken", "starter"],
-    variants: [{ label: "", price: 280, description: "A popular chicken starter featuring drumette-style pieces, made for sharing or enjoying as a snack." }],
+    variants: [{ label: "", price: 280, description: "Chicken drumettes with a name as memorable as the flavour — made for sharing." }],
   },
   {
     id: "chicken-lollipop-dry",
@@ -124,7 +124,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "6 PC",
     diet: "non-vegetarian",
     keywords: ["chicken", "lollipop", "starter"],
-    variants: [{ label: "", price: 220, description: "Chicken lollipops served in a dry preparation, a familiar favourite for Indo-Chinese starter lovers." }],
+    variants: [{ label: "", price: 220, description: "Chicken lollipops in a dry preparation — a classic choice for the starter table." }],
   },
   {
     id: "dragon-chicken",
@@ -133,7 +133,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["chicken", "starter", "spicy"],
-    variants: [{ label: "", price: 250, description: "A bold Indo-Chinese chicken dish with a distinctive name and an appetising, flavour-focused appeal." }],
+    variants: [{ label: "", price: 250, description: "A distinctive Indo-Chinese chicken dish, bringing a little character to your café experience." }],
   },
   {
     id: "chicken-fried-rice-schezwan",
@@ -141,7 +141,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["rice", "chicken", "schezwan", "spicy"],
-    variants: [{ label: "", price: 150, description: "A chicken fried rice preparation paired with Schezwan-style flavour for a more distinctive rice option." }],
+    variants: [{ label: "", price: 150, description: "Chicken fried rice with a Schezwan-style flavour — a distinctive choice for your next meal." }],
   },
   {
     id: "chicken-65",
@@ -150,7 +150,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "8 PC",
     diet: "non-vegetarian",
     keywords: ["chicken", "starter", "spicy"],
-    variants: [{ label: "", price: 180, description: "A popular chicken starter served in eight pieces, perfect for enjoying as a snack or alongside a meal." }],
+    variants: [{ label: "", price: 180, description: "Eight pieces of Chicken 65 — a well-known choice for an Indo-Chinese starter." }],
   },
   {
     id: "paneer-65",
@@ -159,7 +159,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "8 PC",
     diet: "vegetarian",
     keywords: ["paneer", "starter", "spicy"],
-    variants: [{ label: "", price: 200, description: "A paneer-based starter served in eight pieces, offering a vegetarian alternative to a classic starter favourite." }],
+    variants: [{ label: "", price: 200, description: "Eight pieces of paneer 65 — the vegetarian answer to a beloved starter." }],
   },
   {
     id: "chicken-dry-fry",
@@ -168,7 +168,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["chicken", "starter"],
-    variants: [{ label: "", price: 180, description: "Boneless chicken served in a dry preparation, suitable for anyone looking for a chicken starter." }],
+    variants: [{ label: "", price: 180, description: "Boneless chicken in a dry-fry preparation — a straightforward, flavourful starter." }],
   },
   {
     id: "chicken-chips",
@@ -177,7 +177,7 @@ const mainsItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["chicken", "starter"],
-    variants: [{ label: "", price: 190, description: "A chicken-based snack option with a name that promises something different from the usual starters." }],
+    variants: [{ label: "", price: 190, description: "Chicken pieces prepared as a snack-sized starter — an easy choice to add to your order." }],
   },
 ];
 
@@ -187,8 +187,8 @@ const sandwichItems: MenuItemDraft[] = [
     name: "Sandwich",
     keywords: ["toast", "grill"],
     variants: [
-      { label: "Veg", price: 80, description: "A simple vegetable sandwich, perfect for a light and convenient café bite." },
-      { label: "Chicken", price: 120, description: "A chicken sandwich that makes for a satisfying snack or quick meal." },
+      { label: "Veg", price: 80, description: "A vegetable sandwich — a simple café option for a lighter bite." },
+      { label: "Chicken", price: 120, description: "A chicken-filled sandwich — a convenient choice for a quick meal." },
     ],
   },
   {
@@ -198,7 +198,7 @@ const sandwichItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["toast", "breakfast", "egg"],
-    variants: [{ label: "Boiled Egg", price: 50, description: "Buttered toast served with boiled egg, a familiar and simple breakfast-style choice." }],
+    variants: [{ label: "Boiled Egg", price: 50, description: "Buttered toast served with a boiled egg — a simple breakfast combination." }],
   },
   {
     id: "butter-toast-poached-egg",
@@ -207,7 +207,7 @@ const sandwichItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["toast", "breakfast", "egg", "poached"],
-    variants: [{ label: "Poached Egg", price: 40, description: "Buttered toast served with a perfectly poached egg." }],
+    variants: [{ label: "Poached Egg", price: 40, description: "Buttered toast served with a poached egg — a simple breakfast choice." }],
   },
   {
     id: "butter-toast-omelette",
@@ -216,7 +216,7 @@ const sandwichItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "non-vegetarian",
     keywords: ["toast", "breakfast", "omelette", "egg"],
-    variants: [{ label: "Masala Omlet", price: 80, description: "Buttered toast paired with masala omelette for a more filling and flavourful bite." }],
+    variants: [{ label: "Masala Omlet", price: 80, description: "Buttered toast served with masala omlet — a satisfying start to the day." }],
   },
 ];
 
@@ -226,8 +226,8 @@ const momoItems: MenuItemDraft[] = [
     name: "Fry Momo",
     keywords: ["momo", "dumpling", "fried"],
     variants: [
-      { label: "Veg", price: 100, description: "Vegetable-filled momos served in a fried preparation, perfect for a satisfying snack." },
-      { label: "Chicken", price: 130, description: "Chicken-filled momos served in a fried preparation for a flavourful snack." },
+      { label: "Veg", price: 100, description: "Vegetable momos with a fried finish — a satisfying snack." },
+      { label: "Chicken", price: 130, description: "Chicken momos in a fried preparation — a popular choice for momo lovers." },
     ],
   },
   {
@@ -236,7 +236,7 @@ const momoItems: MenuItemDraft[] = [
     serving: "7 PC",
     diet: "vegetarian",
     keywords: ["momo", "dumpling", "steamed", "veg"],
-    variants: [{ label: "", price: 80, description: "Seven steamed vegetable momos, a comforting choice for momo lovers." }],
+    variants: [{ label: "", price: 80, description: "Seven steamed vegetable momos — a classic vegetarian momo option." }],
   },
   {
     id: "steam-chicken-momo",
@@ -244,15 +244,15 @@ const momoItems: MenuItemDraft[] = [
     serving: "7 PC",
     diet: "non-vegetarian",
     keywords: ["momo", "dumpling", "steamed", "chicken"],
-    variants: [{ label: "", price: 110, description: "Seven steamed chicken momos, perfect for enjoying a classic momo favourite." }],
+    variants: [{ label: "", price: 110, description: "Seven steamed chicken momos — simple, satisfying and a momo-lover's favourite." }],
   },
   {
     id: "jhol-momo",
     name: "Jhol Momo",
     keywords: ["momo", "dumpling", "soup", "spicy"],
     variants: [
-      { label: "Veg", price: 90, description: "Vegetable momos served with a soupy accompaniment, inspired by the popular jhol momo style." },
-      { label: "Chicken", price: 130, description: "Chicken momos served with a soupy accompaniment for a comforting momo experience." },
+      { label: "Veg", price: 90, description: "Vegetable momos in a light jhol broth — comfort in a bowl." },
+      { label: "Chicken", price: 130, description: "Chicken momos served with jhol broth — a comforting choice for momo lovers." },
     ],
   },
   {
@@ -260,8 +260,8 @@ const momoItems: MenuItemDraft[] = [
     name: "Soup",
     keywords: ["soup", "warm"],
     variants: [
-      { label: "Veg", price: 100, description: "A warm vegetable soup, ideal for a light and comforting start." },
-      { label: "Chicken", price: 120, description: "A chicken-based soup for a warm and satisfying bowl." },
+      { label: "Veg", price: 100, description: "A light vegetable soup — warm, simple and comforting." },
+      { label: "Chicken", price: 120, description: "Chicken soup — a warm option for a comforting meal." },
     ],
   },
   {
@@ -270,7 +270,7 @@ const momoItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "vegetarian",
     keywords: ["corn", "snack"],
-    variants: [{ label: "", price: 120, description: "Corn seasoned with pepper and salt, a simple snack with a familiar flavour." }],
+    variants: [{ label: "", price: 120, description: "Sweet corn tossed with pepper and salt — a simple, moreish snack." }],
   },
 ];
 
@@ -281,8 +281,8 @@ const biteItems: MenuItemDraft[] = [
     diet: "vegetarian",
     keywords: ["fries", "snack"],
     variants: [
-      { label: "Salted", price: 100, description: "Classic salted fries, a familiar snack that goes well with almost anything." },
-      { label: "Peri Peri", price: 120, description: "French fries with a peri peri-style flavour for those who enjoy a little extra seasoning." },
+      { label: "Salted", price: 100, description: "Classic salted fries — a familiar snack for any time of day." },
+      { label: "Peri Peri", price: 120, description: "Fries with peri peri-style seasoning — a flavourful twist on a familiar snack." },
     ],
   },
   {
@@ -291,9 +291,9 @@ const biteItems: MenuItemDraft[] = [
     serving: "8 PC",
     keywords: ["pakora", "fritters", "snack"],
     variants: [
-      { label: "Veg", price: 110, description: "Eight pieces of vegetable pakora, a familiar tea-time snack." },
-      { label: "Egg", price: 150, description: "Eight pieces of egg-based pakora for a more filling snack." },
-      { label: "Chicken", price: 180, description: "Eight pieces of chicken pakora, a satisfying choice for chicken snack lovers." },
+      { label: "Veg", price: 110, description: "Eight pieces of vegetable pakora — a classic tea-time choice." },
+      { label: "Egg", price: 150, description: "Eight pieces of egg pakora — a satisfying tea-time snack." },
+      { label: "Chicken", price: 180, description: "Eight pieces of chicken pakora — a hearty option for sharing." },
     ],
   },
   {
@@ -301,9 +301,9 @@ const biteItems: MenuItemDraft[] = [
     name: "Wai Wai",
     keywords: ["noodles", "instant"],
     variants: [
-      { label: "Veg", price: 50, description: "A quick noodle-based snack in a vegetable variation." },
-      { label: "Egg", price: 60, description: "A noodle-based snack paired with egg for a more filling option." },
-      { label: "Chicken", price: 70, description: "A quick noodle snack with a chicken variation." },
+      { label: "Veg", price: 50, description: "Instant noodles in a quick vegetable preparation — nostalgia in a bowl." },
+      { label: "Egg", price: 60, description: "Wai Wai noodles with egg — a quick, satisfying bowl." },
+      { label: "Chicken", price: 70, description: "Wai Wai noodles with chicken — a familiar quick-meal combination." },
     ],
   },
   {
@@ -312,8 +312,8 @@ const biteItems: MenuItemDraft[] = [
     keywords: ["noodles", "instant"],
     variants: [
       { label: "Veg", price: 50, description: "A familiar instant noodle favourite in a vegetable variation." },
-      { label: "Egg", price: 60, description: "Classic Maggi paired with egg for an extra filling snack." },
-      { label: "Chicken", price: 70, description: "A chicken variation of a familiar noodle favourite." },
+      { label: "Egg", price: 60, description: "Classic Maggi with egg — quick, familiar and satisfying." },
+      { label: "Chicken", price: 70, description: "Maggi with chicken — a familiar noodle favourite." },
     ],
   },
   {
@@ -322,47 +322,47 @@ const biteItems: MenuItemDraft[] = [
     serving: "Standard",
     diet: "vegetarian",
     keywords: ["potato", "snack", "indo-chinese"],
-    variants: [{ label: "", price: 170, description: "A popular Indo-Chinese potato dish combining honey and chilli-inspired flavours." }],
+    variants: [{ label: "", price: 170, description: "Potatoes prepared in a honey-chilli style — a familiar Indo-Chinese snack." }],
   },
 ];
 
 const drinkItems: MenuItemDraft[] = [
   { id: "water",
-    categoryId: "cold-drinks", name: "Water", keywords: ["water", "mineral"], variants: [{ label: "500 ML", price: 10, description: "A 500 ml bottle of drinking water." }] },
+    categoryId: "cold-drinks", name: "Water", keywords: ["water", "mineral"], variants: [{ label: "500 ML", price: 10, description: "A 500 ml bottle of pure drinking water — simple and essential." }] },
   { id: "black-coffee",
-    categoryId: "hot-drinks", name: "Black Coffee", keywords: ["coffee", "espresso"], variants: [{ label: "", price: 40, description: "A straightforward black coffee for those who enjoy their coffee without milk." }] },
+    categoryId: "hot-drinks", name: "Black Coffee", keywords: ["coffee", "espresso"], variants: [{ label: "", price: 40, description: "A clean black coffee — no milk, just the good stuff." }] },
   { id: "milk-coffee",
-    categoryId: "hot-drinks", name: "Milk Coffee", keywords: ["coffee", "latte"], variants: [{ label: "", price: 50, description: "A familiar cup of coffee prepared with milk." }] },
+    categoryId: "hot-drinks", name: "Milk Coffee", keywords: ["coffee", "latte"], variants: [{ label: "", price: 50, description: "Coffee with milk — a familiar café classic." }] },
   { id: "cold-coffee",
-    categoryId: "cold-drinks", name: "Cold Coffee", keywords: ["coffee", "iced"], variants: [{ label: "", price: 90, description: "A chilled coffee drink, perfect for a refreshing café break." }] },
+    categoryId: "cold-drinks", name: "Cold Coffee", keywords: ["coffee", "iced"], variants: [{ label: "", price: 90, description: "Cold coffee — a café favourite for a refreshing break." }] },
   { id: "milk-tea",
-    categoryId: "hot-drinks", name: "Milk Tea", keywords: ["tea", "chai"], variants: [{ label: "", price: 40, description: "A familiar cup of tea prepared with milk." }] },
+    categoryId: "hot-drinks", name: "Milk Tea", keywords: ["tea", "chai"], variants: [{ label: "", price: 40, description: "Tea prepared with milk — a comforting everyday favourite." }] },
   { id: "lemon-tea",
-    categoryId: "hot-drinks", name: "Lemon Tea", keywords: ["tea", "lemon"], variants: [{ label: "", price: 30, description: "A light tea option with a refreshing lemon flavour." }] },
+    categoryId: "hot-drinks", name: "Lemon Tea", keywords: ["tea", "lemon"], variants: [{ label: "", price: 30, description: "Tea with lemon — a refreshing choice for a lighter cup." }] },
   { id: "ginger-tea",
-    categoryId: "hot-drinks", name: "Ginger Tea", keywords: ["tea", "ginger"], variants: [{ label: "", price: 35, description: "A comforting tea with the distinctive flavour of ginger." }] },
+    categoryId: "hot-drinks", name: "Ginger Tea", keywords: ["tea", "ginger"], variants: [{ label: "", price: 35, description: "Tea with ginger — a familiar choice for tea lovers." }] },
   { id: "black-tea",
-    categoryId: "hot-drinks", name: "Black Tea", keywords: ["tea"], variants: [{ label: "", price: 25, description: "A simple tea preparation without milk." }] },
+    categoryId: "hot-drinks", name: "Black Tea", keywords: ["tea"], variants: [{ label: "", price: 25, description: "Plain black tea — simple, brisk and unhurried." }] },
   {
     id: "coke",
     categoryId: "cold-drinks",
     name: "Coke",
     keywords: ["cola", "coca"],
     variants: [
-      { label: "Regular", price: 60, description: "A classic chilled cola drink." },
-      { label: "Masala Coke", price: 80, description: "A cola-based drink with a masala-inspired twist." },
+      { label: "Regular", price: 60, description: "A chilled cola — the classic refresher." },
+      { label: "Masala Coke", price: 80, description: "Cola with a masala twist — a different take on a familiar drink." },
     ],
   },
   { id: "oreo-shake",
-    categoryId: "cold-drinks", name: "Oreo Shake", keywords: ["shake", "dessert", "oreo"], variants: [{ label: "", price: 120, description: "A creamy-style shake featuring the familiar Oreo flavour." }] },
+    categoryId: "cold-drinks", name: "Oreo Shake", keywords: ["shake", "dessert", "oreo"], variants: [{ label: "", price: 120, description: "A café favourite featuring Oreo in a delicious shake." }] },
   { id: "fresh-lime-soda",
-    categoryId: "cold-drinks", name: "Fresh Lime Soda", keywords: ["lime", "soda", "fresh"], variants: [{ label: "", price: 40, description: "A refreshing lime-based soda, ideal when you want something light and fizzy." }] },
+    categoryId: "cold-drinks", name: "Fresh Lime Soda", keywords: ["lime", "soda", "fresh"], variants: [{ label: "", price: 40, description: "Fresh lime soda — a refreshing choice for any time of day." }] },
   { id: "virgin-mojito",
-    categoryId: "cold-drinks", name: "Virgin Mojito", keywords: ["mocktail", "mint", "fresh"], variants: [{ label: "", price: 90, description: "A refreshing non-alcoholic mojito-style drink with a citrus-inspired character." }] },
+    categoryId: "cold-drinks", name: "Virgin Mojito", keywords: ["mocktail", "mint", "fresh"], variants: [{ label: "", price: 90, description: "A mojito-style mocktail — a refreshing non-alcoholic café drink." }] },
   { id: "blue-lagoon",
-    categoryId: "cold-drinks", name: "Blue Lagoon", keywords: ["mocktail", "blue", "fresh"], variants: [{ label: "", price: 90, description: "A vibrant blue refreshment that adds a colourful touch to your café experience." }] },
+    categoryId: "cold-drinks", name: "Blue Lagoon", keywords: ["mocktail", "blue", "fresh"], variants: [{ label: "", price: 90, description: "A blue mocktail — a colourful addition to your café experience." }] },
   { id: "chocolate-shake",
-    categoryId: "cold-drinks", name: "Chocolate Shake", keywords: ["shake", "dessert", "chocolate"], variants: [{ label: "", price: 120, description: "A chocolate-flavoured shake for anyone craving a sweet and refreshing drink." }] },
+    categoryId: "cold-drinks", name: "Chocolate Shake", keywords: ["shake", "dessert", "chocolate"], variants: [{ label: "", price: 120, description: "A chocolate shake — a familiar sweet treat in a glass." }] },
 ];
 
 // ─────────────────────── MOOD DISCOVERY TAGS ───────────────────────
@@ -373,32 +373,32 @@ const drinkItems: MenuItemDraft[] = [
 // ── NEW SAMPLE ITEMS (illustrative — see brand.sampleMenu notice) ──
 
 const riceNewItems: MenuItemDraft[] = [
-  { id: "egg-fried-rice", name: "Egg Fried Rice", diet: "non-vegetarian", keywords: ["rice","egg","fried rice"], variants: [{ label: "", price: 110, description: "Fried rice tossed with egg for a richer, more satisfying bowl." }] },
-  { id: "schezwan-veg-fried-rice", name: "Schezwan Veg Fried Rice", diet: "vegetarian", keywords: ["rice","veg","schezwan","spicy"], variants: [{ label: "", price: 130, description: "Vegetable fried rice finished with a Schezwan-style kick." }] },
-  { id: "schezwan-chicken-fried-rice", name: "Schezwan Chicken Fried Rice", diet: "non-vegetarian", keywords: ["rice","chicken","schezwan","spicy"], variants: [{ label: "", price: 170, description: "Chicken fried rice paired with Schezwan-style flavour." }] },
-  { id: "veg-hakka-noodles", name: "Veg Hakka Noodles", diet: "vegetarian", keywords: ["noodles","hakka","veg"], variants: [{ label: "", price: 120, description: "Hakka-style noodles tossed with vegetables." }] },
-  { id: "chicken-hakka-noodles", name: "Chicken Hakka Noodles", diet: "non-vegetarian", keywords: ["noodles","hakka","chicken"], variants: [{ label: "", price: 170, description: "Hakka-style noodles tossed with chicken." }] },
+  { id: "egg-fried-rice", name: "Egg Fried Rice", diet: "non-vegetarian", keywords: ["rice","egg","fried rice"], variants: [{ label: "", price: 110, description: "Fried rice with egg — a familiar café favourite." }] },
+  { id: "schezwan-veg-fried-rice", name: "Schezwan Veg Fried Rice", diet: "vegetarian", keywords: ["rice","veg","schezwan","spicy"], variants: [{ label: "", price: 130, description: "Vegetable fried rice with a Schezwan-style flavour — a distinctive vegetarian choice." }] },
+  { id: "schezwan-chicken-fried-rice", name: "Schezwan Chicken Fried Rice", diet: "non-vegetarian", keywords: ["rice","chicken","schezwan","spicy"], variants: [{ label: "", price: 170, description: "Chicken fried rice with a Schezwan-style flavour — a satisfying meal choice." }] },
+  { id: "veg-hakka-noodles", name: "Veg Hakka Noodles", diet: "vegetarian", keywords: ["noodles","hakka","veg"], variants: [{ label: "", price: 120, description: "Hakka-style noodles with vegetables — a familiar noodle favourite." }] },
+  { id: "chicken-hakka-noodles", name: "Chicken Hakka Noodles", diet: "non-vegetarian", keywords: ["noodles","hakka","chicken"], variants: [{ label: "", price: 170, description: "Hakka-style noodles with chicken — a satisfying option for noodle lovers." }] },
 ];
 
 const starterNewItems: MenuItemDraft[] = [
-  { id: "chicken-popcorn", name: "Chicken Popcorn", diet: "non-vegetarian", keywords: ["chicken","starter","snack"], variants: [{ label: "", price: 160, description: "Small bite-sized pieces of chicken — a fun starter to share." }] },
-  { id: "crispy-chilli-baby-corn", name: "Crispy Chilli Baby Corn", diet: "vegetarian", keywords: ["corn","starter","chilli","veg"], variants: [{ label: "", price: 150, description: "Baby corn tossed in a chilli-style preparation." }] },
-  { id: "paneer-chilli", name: "Paneer Chilli", diet: "vegetarian", keywords: ["paneer","starter","chilli","veg"], variants: [{ label: "", price: 190, description: "Paneer pieces in a chilli-style preparation." }] },
-  { id: "crispy-chicken", name: "Crispy Chicken", diet: "non-vegetarian", keywords: ["chicken","starter","crispy"], variants: [{ label: "", price: 190, description: "Crispy chicken pieces — a classic starter favourite." }] },
+  { id: "chicken-popcorn", name: "Chicken Popcorn", diet: "non-vegetarian", keywords: ["chicken","starter","snack"], variants: [{ label: "", price: 160, description: "Snack-sized chicken pieces — a convenient option for sharing." }] },
+  { id: "crispy-chilli-baby-corn", name: "Crispy Chilli Baby Corn", diet: "vegetarian", keywords: ["corn","starter","chilli","veg"], variants: [{ label: "", price: 150, description: "Chilli-style baby corn — a vegetarian starter with plenty of character." }] },
+  { id: "paneer-chilli", name: "Paneer Chilli", diet: "vegetarian", keywords: ["paneer","starter","chilli","veg"], variants: [{ label: "", price: 190, description: "Paneer prepared in a chilli-style dish — a vegetarian Indo-Chinese favourite." }] },
+  { id: "crispy-chicken", name: "Crispy Chicken", diet: "non-vegetarian", keywords: ["chicken","starter","crispy"], variants: [{ label: "", price: 190, description: "Crispy chicken — a familiar choice for an Indo-Chinese starter." }] },
 ];
 
 const burgerItems: MenuItemDraft[] = [
-  { id: "veg-burger", name: "Veg Burger", diet: "vegetarian", keywords: ["burger","veg","sandwich"], variants: [{ label: "", price: 100, description: "A vegetarian burger — a filling handheld meal." }] },
-  { id: "chicken-burger", name: "Chicken Burger", diet: "non-vegetarian", keywords: ["burger","chicken","sandwich"], variants: [{ label: "", price: 150, description: "A chicken burger — a filling handheld meal." }] },
-  { id: "cheese-sandwich", name: "Cheese Sandwich", diet: "vegetarian", keywords: ["sandwich","cheese","toast"], variants: [{ label: "", price: 110, description: "A toasted sandwich with cheese." }] },
-  { id: "grilled-chicken-sandwich", name: "Grilled Chicken Sandwich", diet: "non-vegetarian", keywords: ["sandwich","chicken","grilled"], variants: [{ label: "", price: 150, description: "A grilled chicken sandwich — a satisfying café classic." }] },
+  { id: "veg-burger", name: "Veg Burger", diet: "vegetarian", keywords: ["burger","veg","sandwich"], variants: [{ label: "", price: 100, description: "A proper vegetarian burger — filling, familiar and satisfying." }] },
+  { id: "chicken-burger", name: "Chicken Burger", diet: "non-vegetarian", keywords: ["burger","chicken","sandwich"], variants: [{ label: "", price: 150, description: "A chicken burger — a familiar café favourite for a filling meal." }] },
+  { id: "cheese-sandwich", name: "Cheese Sandwich", diet: "vegetarian", keywords: ["sandwich","cheese","toast"], variants: [{ label: "", price: 110, description: "A sandwich with cheese — a simple and comforting café choice." }] },
+  { id: "grilled-chicken-sandwich", name: "Grilled Chicken Sandwich", diet: "non-vegetarian", keywords: ["sandwich","chicken","grilled"], variants: [{ label: "", price: 150, description: "A grilled chicken sandwich — a satisfying option for a café meal." }] },
 ];
 
 const dessertItems: MenuItemDraft[] = [
-  { id: "chocolate-brownie", name: "Chocolate Brownie", keywords: ["dessert","chocolate","brownie","sweet"], variants: [{ label: "", price: 100, description: "A rich chocolate brownie — a simple sweet finish." }] },
-  { id: "brownie-with-ice-cream", name: "Brownie with Ice Cream", keywords: ["dessert","chocolate","ice cream","sweet"], variants: [{ label: "", price: 150, description: "A chocolate brownie served with ice cream." }] },
-  { id: "chocolate-pastry", name: "Chocolate Pastry", keywords: ["dessert","chocolate","pastry","sweet"], variants: [{ label: "", price: 80, description: "A chocolate pastry — a small sweet treat." }] },
-  { id: "ice-cream", name: "Ice Cream", keywords: ["dessert","ice cream","sweet"], variants: [{ label: "", price: 70, description: "A scoop of ice cream — a cool, simple dessert." }] },
+  { id: "chocolate-brownie", name: "Chocolate Brownie", keywords: ["dessert","chocolate","brownie","sweet"], variants: [{ label: "", price: 100, description: "A chocolate brownie — a classic dessert choice to enjoy with your café order." }] },
+  { id: "brownie-with-ice-cream", name: "Brownie with Ice Cream", keywords: ["dessert","chocolate","ice cream","sweet"], variants: [{ label: "", price: 150, description: "Chocolate brownie served with ice cream — a classic dessert pairing." }] },
+  { id: "chocolate-pastry", name: "Chocolate Pastry", keywords: ["dessert","chocolate","pastry","sweet"], variants: [{ label: "", price: 80, description: "A chocolate pastry — a small, sweet pause." }] },
+  { id: "ice-cream", name: "Ice Cream", keywords: ["dessert","ice cream","sweet"], variants: [{ label: "", price: 70, description: "Ice cream — a simple, refreshing way to finish your meal." }] },
 ];
 
 const itemMoods: Record<string, MoodId[]> = {
